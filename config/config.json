@@ -1,23 +1,26 @@
 {
   "development": {
-    "username": "root",
-    "password": "<password>",
-    "database": "loginserver",
+    "username": "ref",
+    "password": "ref1234",
+    "database": "Smart_Refrigerator",
     "host": "127.0.0.1",
+    "port": "9306",
     "dialect": "mysql"
   },
   "test": {
-    "username": "root",
-    "password": null,
+    "username": "ref",
+    "password": "ref1234",
     "database": "database_test",
     "host": "127.0.0.1",
+    "port": "9306",
     "dialect": "mysql"
   },
   "production": {
-    "username": "root",
-    "password": null,
+    "username": "ref",
+    "password": "ref1234",
     "database": "database_production",
     "host": "127.0.0.1",
+    "port": "9306",
     "dialect": "mysql"
   }
 }
