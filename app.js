@@ -23,8 +23,10 @@ sequelize
 const bodyParser = require('body-parser')
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
+
 const cors = require('cors')
 app.use(cors())
+
 app.use('/auth', authRouter)
 app.use('/userPage', userPage)
 app.use('/root', root)
