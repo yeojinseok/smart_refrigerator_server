@@ -14,7 +14,9 @@ router.post('/signup', async (req, res, next) => {
     // 중복 id 검사
     const exUser = await User.findOne({ where: { id } })
     if (exUser) {
-      res.status(500).json({ error: '중복되는 아이디.' })
+      return res
+        .status(200)
+        .json({ result: 'fail', status_code: '아이디 중복' })
     }
     // bcrypt로 password를 암호화
     const hash = await bcrypt.hash(password, 12)
@@ -24,10 +26,12 @@ router.post('/signup', async (req, res, next) => {
       password: hash,
       credit: 500,
     })
-    return res.status(200).json({ success: 'true' })
+    return res
+      .status(200)
+      .json({ result: 'success', status_code: '회원가입 완료' })
   } catch (error) {
     console.error(error)
-    return next(error)
+    return res.status(200).json({ result: 'fail', status_code: error })
   }
 })
 
